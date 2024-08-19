@@ -15,9 +15,7 @@ export const CreateOrUpdateTeams = ({ teamsFromApi }: Props) => {
   if (!userCreatedTeams) return <Loader />;
 
   if (!userCreatedTeams.length)
-    return (
-      <NotTeamsFound text="Not Teams Fount, Please create at least 1 team to see it" />
-    );
+    return <NotTeamsFound text="Please create at least 1 team to see it" />;
 
   return (
     <div className="w-[300px] sm:w-[560px]">
