@@ -1,6 +1,5 @@
 import playersApi from "@/app/api/players/players.api";
 import { CreateOrUpdateTeams } from "@/components/create-or-update-teams/create-or-update-teams";
-import { redirect } from "next/navigation";
 
 async function getTeamsFromApi() {
   return playersApi.getTeams();

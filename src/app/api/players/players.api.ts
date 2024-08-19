@@ -1,6 +1,7 @@
 import { ApiTeam } from "./type/api-team.type";
 import { AxiosClient } from "./axios.client";
 import { ApiActions } from "./constant/api-actions.constant";
+import { isAxiosError } from "axios";
 
 class PlayersApi {
   static readonly getTeams = async () => {
@@ -16,6 +17,9 @@ class PlayersApi {
 
       return response.data;
     } catch (error) {
+      if (isAxiosError(error)) {
+        throw new Error(`Error fetching teams from api ${error.message}`);
+      }
       throw new Error("Error fetching teams from api");
     }
   };
