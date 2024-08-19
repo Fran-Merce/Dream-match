@@ -30,7 +30,10 @@ export const CreateOrUpdateTeamForm = ({ apiTeams, localTeam }: Props) => {
   if (!apiTeams.length) return <Loader />;
 
   return (
-    <>
+    <form
+      onSubmit={localTeam ? handleUpdate : handleCreate}
+      className="w-[340px]"
+    >
       <label htmlFor="name">Name</label>
       <input
         onChange={(e) => setTeamName(e.target.value)}
@@ -77,15 +80,11 @@ export const CreateOrUpdateTeamForm = ({ apiTeams, localTeam }: Props) => {
           ))}
         </ul>
         {selectedPlayers.length === TEAM_PLAYERS_SIZE && (
-          <Button
-            type="button"
-            className="mt-5"
-            onClick={localTeam ? handleUpdate : handleCreate}
-          >
+          <Button type="submit" className="mt-5">
             {localTeam ? "Update Team" : "Create Team"}
           </Button>
         )}
       </div>
-    </>
+    </form>
   );
 };
