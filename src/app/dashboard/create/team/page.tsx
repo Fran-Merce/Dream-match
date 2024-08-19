@@ -1,5 +1,4 @@
 import playersApi from "@/app/api/players/players.api";
-import { ApiTeam } from "@/app/api/players/type/api-team.type";
 import { CreateOrUpdateTeamForm } from "@/components/create-or-update-team-form/create-or-update-team-form";
 
 async function getApiTeamsData() {
