@@ -20,7 +20,6 @@ class PlayersApi {
       return response.data;
     } catch (error) {
       toast.error("Error fetching teams, redirecting to home");
-      redirect(Routes.HOME);
     }
   };
 }
