@@ -1,13 +1,8 @@
 import playersApi from "@/app/api/players/players.api";
 import { CreateOrUpdateTeamForm } from "@/components/create-or-update-team-form/create-or-update-team-form";
-import { redirect } from "next/navigation";
 
 async function getApiTeamsData() {
-  try {
-    return await playersApi.getTeams();
-  } catch (error) {
-    redirect("/");
-  }
+  return playersApi.getTeams();
 }
 
 export default async function CreateTeam() {

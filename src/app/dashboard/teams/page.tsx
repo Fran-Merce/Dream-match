@@ -3,11 +3,7 @@ import { CreateOrUpdateTeams } from "@/components/create-or-update-teams/create-
 import { redirect } from "next/navigation";
 
 async function getTeamsFromApi() {
-  try {
-    return await playersApi.getTeams();
-  } catch (error) {
-    redirect("/");
-  }
+  return playersApi.getTeams();
 }
 export default async function Teams() {
   const teamsFromApi = await getTeamsFromApi();
