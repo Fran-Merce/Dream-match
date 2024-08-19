@@ -21,7 +21,7 @@
 
 Create a `.env` file and add this variables
 
-- NEXT_PLAYERS_API_BASE_URL=https://apifootball.com
+- NEXT_PLAYERS_API_BASE_URL=https://apiv3.apifootball.com
 - NEXT_PLAYERS_API_KEY= your-api-key
 
 ### Run
