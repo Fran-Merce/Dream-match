@@ -49,7 +49,6 @@ export const useCreateOrUpdateTeam = ({
     );
 
     if (isPlayerAlreadySelected) {
-      console.log(isPlayerAlreadySelected);
       return toast.error("Player already selected");
     }
 
@@ -67,6 +66,7 @@ export const useCreateOrUpdateTeam = ({
   };
 
   const handleCreate = (e: FormEvent): void => {
+    e.preventDefault();
     if (!isValidTeam()) return;
 
     createTeam({
