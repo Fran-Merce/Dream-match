@@ -10,10 +10,12 @@ export default function Home() {
           Welcome to Dream Match
         </h1>
         <h2 className="md:text-5xl text-4xl font-bold text-black-400">
-          Create your dream team
+          Create your dream Match
         </h2>
         <Link href={Routes.CREATE_TEAM}>
-          <Button className="mt-4 md:mt-8 text-lg">Create Team</Button>
+          <Button className="mt-4 md:mt-8 text-lg">
+            Create Teams and Match
+          </Button>
         </Link>
       </div>
     </main>
