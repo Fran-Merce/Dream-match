@@ -3,6 +3,7 @@ import { AxiosClient } from "./axios.client";
 import toast from "react-hot-toast";
 import { Routes } from "@/constant/routes.constant";
 import { ApiActions } from "./constant/api-actions.constant";
+import { redirect } from "next/navigation";
 
 class PlayersApi {
   static readonly getTeams = async () => {
@@ -19,7 +20,7 @@ class PlayersApi {
       return response.data;
     } catch (error) {
       toast.error("Error fetching teams, redirecting to home");
-      window.location.href = Routes.HOME;
+      redirect(Routes.HOME);
     }
   };
 }
