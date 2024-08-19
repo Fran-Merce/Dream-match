@@ -2,7 +2,7 @@ import { ApiTeam } from "./type/api-team.type";
 import { AxiosClient } from "./axios.client";
 import toast from "react-hot-toast";
 import { Routes } from "@/constant/routes.constant";
-import { ApiActions } from "./constant/api-actions.conStant";
+import { ApiActions } from "./constant/api-actions.constant";
 
 class PlayersApi {
   static readonly getTeams = async () => {
