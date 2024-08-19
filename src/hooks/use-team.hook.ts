@@ -4,7 +4,7 @@ import { Routes } from "@/constant/routes.constant";
 import { useMatchStore } from "@/store/match.store";
 import { Team } from "@/store/type/match.type";
 import { useRouter } from "next/navigation";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import toast from "react-hot-toast";
 
 interface Props {
@@ -66,7 +66,7 @@ export const useCreateOrUpdateTeam = ({
     );
   };
 
-  const handleCreate = (): void => {
+  const handleCreate = (e: FormEvent): void => {
     if (!isValidTeam()) return;
 
     createTeam({
@@ -85,7 +85,8 @@ export const useCreateOrUpdateTeam = ({
     }
     return true;
   };
-  const handleUpdate = () => {
+  const handleUpdate = (e: FormEvent) => {
+    e.preventDefault();
     if (!isValidTeam() || !localTeam) return;
 
     updateTeam(localTeam.id, {
