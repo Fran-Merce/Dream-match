@@ -8,13 +8,28 @@ import React from "react";
 export const DashboardNavbar = () => {
   const teams = useMatchStore((state) => state.match.teams);
   return (
-    <nav className="flex justify-center h-[60px] bg-slate-600">
-      <ul className="flex items-center gap-4">
-        <Link href={Routes.MATCH}>Match</Link>
+    <nav className="flex justify-center h-[60px] bg-black ">
+      <ul className="flex items-center text-white gap-4">
+        <Link
+          className="hover:text-slate-300 transition-all duration-100"
+          href={Routes.MATCH}
+        >
+          Match
+        </Link>
         {teams.length < TEAMS_FOR_MATCH && (
-          <Link href={Routes.CREATE_TEAM}>Create Team</Link>
+          <Link
+            className="hover:text-slate-300 transition-all duration-100"
+            href={Routes.CREATE_TEAM}
+          >
+            Create Team
+          </Link>
         )}
-        <Link href={Routes.TEAMS}>Teams</Link>
+        <Link
+          className="hover:text-slate-300 transition-all duration-100"
+          href={Routes.TEAMS}
+        >
+          Teams
+        </Link>
       </ul>
     </nav>
   );

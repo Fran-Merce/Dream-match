@@ -11,13 +11,15 @@ export const MatchList = () => {
   if (teams.length < TEAMS_FOR_MATCH) return <NotTeamsFound />;
   return (
     <>
-      <h2 className="text-3xl my-4 sm:text-4xl font-light text-center">
-        Equipos Formados y Completos para el partido
+      <h2 className="text-white text-3xl my-4 sm:text-4xl font-light text-center">
+        Teams Formed and Completed for the Match
       </h2>
       <div className="w-full flex justify-between">
         <TeamInfo team={teamOne} />
         <div className="flex justify-center items-center">
-          <h2 className=" text-2xl sm:text-4xl text-center mt-6">VS</h2>
+          <h2 className="text-white text-2xl sm:text-6xl text-center mt-6">
+            VS
+          </h2>
         </div>
         <TeamInfo team={teamTwo} />
       </div>

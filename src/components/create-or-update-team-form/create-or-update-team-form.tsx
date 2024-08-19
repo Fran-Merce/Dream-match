@@ -30,10 +30,7 @@ export const CreateOrUpdateTeamForm = ({ apiTeams, localTeam }: Props) => {
   if (!apiTeams.length) return <Loader />;
 
   return (
-    <form
-      onSubmit={localTeam ? handleUpdate : handleCreate}
-      className="w-[340px]"
-    >
+    <form onSubmit={localTeam ? handleUpdate : handleCreate} className="">
       <label htmlFor="name">Name</label>
       <input
         onChange={(e) => setTeamName(e.target.value)}

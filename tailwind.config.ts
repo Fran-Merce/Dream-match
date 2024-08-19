@@ -20,6 +20,7 @@ const config = {
     extend: {
       backgroundImage: {
         "home-image": "url('/assets/home/background.jpg')",
+        "match-background": "url('/assets/match/background.jpg')",
       },
       colors: {
         border: "hsl(var(--border))",

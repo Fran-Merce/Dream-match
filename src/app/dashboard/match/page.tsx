@@ -2,8 +2,8 @@ import { MatchList } from "@/components/match/match-list";
 
 export default function Match() {
   return (
-    <div className="max-h-screen px-5">
-      <h1 className="text-4xl text-center mt-6">Dream Match</h1>
+    <div className="min-h-[calc(100vh-60px)] bg-match-background px-5">
+      <h1 className="text-4xl text-center pt-6 text-white">Dream Match</h1>
       <MatchList />
     </div>
   );
