@@ -78,6 +78,7 @@ export const CreateOrUpdateTeamForm = ({ apiTeams, localTeam }: Props) => {
         </ul>
         {selectedPlayers.length === TEAM_PLAYERS_SIZE && (
           <Button
+            type="button"
             className="mt-5"
             onClick={localTeam ? handleUpdate : handleCreate}
           >
