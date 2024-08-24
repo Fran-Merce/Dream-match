@@ -1,17 +1,26 @@
-"use client";
-import { Button } from "../ui/button";
+'use client';
+import { Button } from '../ui/button';
 
-import { TEAM_PLAYERS_SIZE } from "@/constant/match-requirements.constant";
-import { Loader } from "../ui/loader";
-import { useCreateOrUpdateTeam } from "@/hooks/use-team.hook";
-import { ApiTeam } from "@/app/api/players/type/api-team.type";
-import { Team } from "@/store/type/match.type";
+import {
+  TEAM_PLAYERS_SIZE,
+  TEAMS_FOR_MATCH,
+} from '@/constant/match-requirements.constant';
+import { Loader } from '../ui/loader';
+import { useCreateOrUpdateTeam } from '@/hooks/use-team.hook';
+import { ApiTeam } from '@/app/api/players/type/api-team.type';
+import { Team } from '@/store/type/match.type';
+import { useEffect } from 'react';
+import { useMatchStore } from '@/store/match.store';
+import { useRouter } from 'next/navigation';
+import { Routes } from '@/constant/routes.constant';
 
 interface Props {
   apiTeams: ApiTeam[];
   localTeam?: Team;
 }
 export const CreateOrUpdateTeamForm = ({ apiTeams, localTeam }: Props) => {
+  const { teams } = useMatchStore((state) => state.match);
+  const router = useRouter();
   const {
     handleSelectApiTeam,
     handleSelectPlayer,
@@ -26,6 +35,12 @@ export const CreateOrUpdateTeamForm = ({ apiTeams, localTeam }: Props) => {
     apiTeams,
     localTeam,
   });
+
+  useEffect(() => {
+    if (!teams) return;
+    if (teams.length < TEAMS_FOR_MATCH) return;
+    router.replace(Routes.TEAMS);
+  }, [teams]);
 
   if (!apiTeams.length) return <Loader />;
 
@@ -78,7 +93,7 @@ export const CreateOrUpdateTeamForm = ({ apiTeams, localTeam }: Props) => {
         </ul>
         {selectedPlayers.length === TEAM_PLAYERS_SIZE && (
           <Button type="submit" className="mt-5">
-            {localTeam ? "Update Team" : "Create Team"}
+            {localTeam ? 'Update Team' : 'Create Team'}
           </Button>
         )}
       </div>
